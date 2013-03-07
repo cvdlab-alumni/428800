@@ -1,6 +1,11 @@
 var matrix = "" ;
-for(var i = 1 ; i <= 100 ; i++)
+for(var i = 1 ; i <= 10 ; i++)
 	{
-		(i%10===0) ? matrix+=(i + "\n") : matrix += (i + "\t");
+		for (var j = 1; j <= 10; j++) 
+		{
+				(j%10===0) ? matrix+=(i*j): matrix += (i*j + "\t");
+		}
+		matrix += "\n";
 	}
 console.log(matrix);
+ 
