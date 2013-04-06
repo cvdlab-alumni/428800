@@ -65,7 +65,7 @@ miniRectagularColumn = CUBOID([2,2,33])
 
 // --- start sequence of columns for first level ---
 rectangularColumns0 = GRID(([[-4,-35,4,-35,4,-35,4],[-4,-71,4],[4+33]]))
-multplyAndTranslateColumn0 = CONS(AA(T([1,2]))([[0,0],[39,0],[78,0],[117,0],[156,0],[0,75]]))
+multplyAndTranslateColumn0 = CONS(AA(T([1,2]))([[0,0],[39,0],[78,0],[117,0],[156,0],[0,75],[156,75]]))
 seriesOfCircularColumn = STRUCT(multplyAndTranslateColumn0(circularColumn))
 
 pillars0 = STRUCT([rectangularColumns0,T([1,2])([2,2])(seriesOfCircularColumn)])
@@ -96,8 +96,4 @@ pillars3 = T([3])([-6])(pillars3)
 building = STRUCT([pillars0,pillars1,pillars2,pillars3])
 VIEW(building)
 
-
-
-building = STRUCT([pillars0,pillars1,pillars2,pillars3])
-VIEW(building)
 
