@@ -22,3 +22,7 @@ stair1 = T([1,2])([35,72])(ramp)
 stair2 = T([1,2,3])([17.5,72,38])(ramp)
 
 stair3 = T([1,2,3])([75,77,74])(ramp)
+
+building = STRUCT([stair1,stair2,stair3])
+
+VIEW(building)
