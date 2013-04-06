@@ -54,7 +54,9 @@ horizontalPartition4F4 = INSR(PROD)(AA(QUOTE)([[4],[72],[-4,-33,-5,-33,-5,-33,-5
 
 floor4 = STRUCT([horizontalPartition1F4,horizontalPartition2F4,horizontalPartition3F4,horizontalPartition4F4])
 
-# --- putting all togheter---
+# --- the terrain for the building 
+terrain = COLOR(BLACK)(T([1,2,3])([-20,-20,-5])(INSR(PROD)(AA(QUOTE)([[205],[135],[5]]))))
 
-building = STRUCT([floor0,floor1,floor2,floor3,floor4])
+# --- putting all togheter---
+building = STRUCT([floor0,floor1,floor2,floor3,floor4,terrain])
 VIEW(building)

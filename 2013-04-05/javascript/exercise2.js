@@ -108,6 +108,9 @@ horizontalPartition4F4 = GRID(([[4],[72],[-4,-33,-5,-33,-5,-33,-5,-33,7]]))
 
 floor4 = STRUCT([horizontalPartition1F4,horizontalPartition2F4,horizontalPartition3F4,horizontalPartition4F4])
 
+// --- the terrain for the building 
+terrain = COLOR([0,0,0])(T([1,2,3])([-20,-20,-5])(GRID([[205],[135],[5]])))
+
 // --- putting all togheter---
-building = STRUCT([floor0,floor1,floor2,floor3,floor4])
+building = STRUCT([floor0,floor1,floor2,floor3,floor4,terrain])
 VIEW(building)
