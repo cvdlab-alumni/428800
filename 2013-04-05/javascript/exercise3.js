@@ -1,5 +1,4 @@
- // ricordarsi di sistemarli circolari
- // circolari con 	trunk = CYLINDER([r, (10.0/12)*h])(12)
+//convenient method used for translation from pyplasm
 T = function (dims) {
   dims = dims.map(function (dim) {
     return dim - 1;
@@ -46,22 +45,25 @@ NN = REPLICA;
 
 VIEW = DRAW;
 
-//ricordarsi il balcone
+// --- start sequence of horizontal partitions for east level ---
 verticalPartition1E = GRID(([[160],[4],[-144,14]]))
 verticalPartition2E = GRID(([[76],[4],[-33,94]]))
 verticalPartition3E = GRID(([[-72,4],[4],[-33,125]]))
 verticalPartition4E = GRID(([[84],[4],[20]]))
 verticalPartition5E = GRID(([[-111,49],[4],[-33,125]]))
 
+// --- use this function to multiplicate and translate the object so we can instanziate only one object of that kind---
 multplyAndTranslatevp4e = CONS(AA(T([1,3]))([[76,33],[76,70],[76,107]]))
 seriesOfvp4e = STRUCT(multplyAndTranslatevp4e(verticalPartition4E))
 
 
 east = STRUCT([verticalPartition1E,verticalPartition2E,verticalPartition3E,seriesOfvp4e,verticalPartition5E])
 
+// --- start sequence of horizontal partitions for west level ---
 verticalPartition1W = GRID(([[160],[-4,-87,4],[-107,51]]))
 verticalPartition2W = GRID(([[160],[-4,-87,4],[20]]))
 
+// --- use this function to multiplicate and translate the object so we can instanziate only one object of that kind---
 multplyAndTranslatevp2w = CONS(AA(T([3]))([[33],[70]]))
 seriesOfvp2w = STRUCT(multplyAndTranslatevp2w(verticalPartition2W))
 
@@ -77,9 +79,11 @@ verticalPartition11W = GRID(([[-129,-2,-7,-2,20],[-4,-87,4],[-22,-7,-4,-20,-17,-
 
 west = STRUCT([verticalPartition1W,seriesOfvp2w,verticalPartition3W,verticalPartition4W,verticalPartition5W,verticalPartition6W,verticalPartition7W,verticalPartition8W,verticalPartition9W,verticalPartition10W,verticalPartition11W])
 
+// --- start sequence of horizontal partitions for north level ---
 verticalPartition1N = GRID(([[-4,-152,4],[87],[-33,-20,-17,-20,-17,-20,-17,14]]))
 verticalPartition2N = GRID(([[-4,-152,4],[87],[20]]))
 
+// --- use this function to multiplicate and translate the object so we can instanziate only one object of that kind---
 multplyAndTranslatevp2n = CONS(AA(T([3]))([[33],[33+20+17],[33+20+17+20+17]]))
 seriesOfvp2n = STRUCT(multplyAndTranslatevp2n(verticalPartition2N))
 
@@ -87,6 +91,7 @@ verticalPartition3N = GRID(([[-4,-152,4],[4],[-33,158-33]]))
 verticalPartition4N = GRID(([[-4,-152,4],[95],[-33,4]]))
 verticalPartition5N = GRID(([[-4,-152,4],[95],[5]]))
 
+// --- use this function to multiplicate and translate the object so we can instanziate only one object of that kind---
 multplyAndTranslatevp5n = CONS(AA(T([3]))([[33+4+37],[33+4+33+5+36]]))
 seriesOfvp5n = STRUCT(multplyAndTranslatevp5n(verticalPartition5N))
 
@@ -96,6 +101,7 @@ verticalPartition7N = GRID(([[-4,-152,4],[-95+7+13,13],[-33,158-33]]))
 nord = STRUCT([verticalPartition1N,seriesOfvp2n,verticalPartition3N,verticalPartition4N,seriesOfvp5n,verticalPartition6N,verticalPartition7N])
 nord = T([1])([1])(nord)
 
+// --- start sequence of horizontal partitions for south level ---
 verticalPartition1S = GRID(([[4],[95],[-33,-4,-30,-5,-30,-25,-17,14]]))
 verticalPartition2S = GRID(([[4],[95],[-33,-4,-30,-5,-30,25]]))
 verticalPartition3S = GRID(([[4],[95],[-33,-4,-30,5]]))
@@ -110,5 +116,6 @@ verticalPartition9S = GRID(([[4],[95],[-33-4-30,10]]))
 sud = STRUCT([verticalPartition1S,verticalPartition2S,verticalPartition3S,verticalPartition4S,verticalPartition5S,verticalPartition6S,verticalPartition7S,verticalPartition8S,verticalPartition9S])
 
 
+// --- putting all togheter---
 building = STRUCT([east,west,nord,sud])
 VIEW(building)

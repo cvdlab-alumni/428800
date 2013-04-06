@@ -1,5 +1,4 @@
- // ricordarsi di sistemarli circolari
- // circolari con 	trunk = CYLINDER([r, (10.0/12)*h])(12)
+//convenient method used for translation from pyplasm
 T = function (dims) {
   dims = dims.map(function (dim) {
     return dim - 1;
@@ -46,9 +45,10 @@ NN = REPLICA;
 
 VIEW = DRAW;
 
+// --- generate two windows with black color ---
 windowssud = COLOR([0,0,0])(GRID(([[1],[-4,63],[-33-4-5,25]])))
 windowssud2 = COLOR([0,0,0])(GRID(([[1],[-4,63],[-33-4-5-25-5-5-3,22]])))
 
+// --- putting all togheter---
 building = STRUCT([windowssud,windowssud2])
-
 VIEW(building)
