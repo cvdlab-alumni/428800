@@ -221,8 +221,8 @@ sud = STRUCT([verticalPartition1S,verticalPartition2S,verticalPartition3S,vertic
 
 // --- exercise 4
 // --- generate two windows with black color ---
-windowssud = COLOR([0,0,0])(GRID(([[1],[-4,63],[-33-4-5,25]])))
-windowssud2 = COLOR([0,0,0])(GRID(([[1],[-4,63],[-33-4-5-25-5-5-3,22]])))
+windowssud = COLOR([0,0,0,0.5])(GRID(([[1],[-4,63],[-33-4-5,25]])))
+windowssud2 = COLOR([0,0,0,0.5])(GRID(([[1],[-4,63],[-33-4-5-25-5-5-3,22]])))
 
 // --- exercise 5
 // --- l = stair width
