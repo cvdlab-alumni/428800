@@ -144,4 +144,4 @@ w2 = T([2])([2.70])(wheel)
 w3 = T([1,2])([3.95,2.70])(wheel)
 
 wheels4 = STRUCT([wheel,w1,w2,w3])
-VIEW(wheels4)
+# VIEW(wheels4)
