@@ -1,4 +1,4 @@
-#esercizio 3
+#exercise 4
 def traslaPointsZ(points,value):
 	return map(lambda item:\
 		[item[0],item[1],item[2]+value], points)
@@ -59,9 +59,6 @@ supp1 = BEZIERCURVE(primopezzo1)
 supp2 = BEZIERCURVE(primopezzo2)
 supp3 = BEZIERCURVE(primopezzo3)
 supp4 = BEZIERCURVE(primopezzo4)
-
-# bucoprimopezzo1 = [[0.73, 4.5,0], [0.85, 4.47,0], [0.95, 4.47,0], [1.1, 4.39,0]]
-# bucoprimopezzo2 = [[1.1, 4.39,0], [0.88, 4.38,0], [0.84, 4.43,0], [0.73, 4.5,0]]
 
 bucoprimopezzo1 = [[0.74, 4.52,0], [0.86, 4.49,0], [0.94, 4.46,0], [1.09, 4.39,0]]
 bucoprimopezzo2 = [[1.09, 4.39,0], [1.08, 4.39,0], [1.12, 4.35,0], [1.06, 4.32,0]]
@@ -143,11 +140,6 @@ manico3 = R([1,2])(2*PI/3)(manico2)
 manico = STRUCT([manico1,manico2,manico3])
 manico = COLOR(GREEN)(manico)
 
-# centrovolante = bezier_circle_map(0.02,S1)
-# centrovolante = BEZIER(S2)([centrovolante,BEZIER(S1)([0,0,0])])
-# centrovolante = CYLINDRICALSURFACE([centrovolante,[0,0,0.01]])
-# ocentrovolante = MAP(centrovolante)(domain2)
-
 centrovolante = circle(0.02)
 centrovolante = extrude(centrovolante,0.01)
 centrovolante = COLOR(YELLOW)(centrovolante)
@@ -155,3 +147,5 @@ centrovolante = COLOR(YELLOW)(centrovolante)
 volante = STRUCT([bordovolante,manico,centrovolante])
 volante = R([1,3])(-PI/2)(volante)
 volante = T([1,2,3])([4,1,1.5])(volante)
+
+volante = T([1,2,3])([-4,-1.5,-0.4])(volante)
