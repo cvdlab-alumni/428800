@@ -140,7 +140,7 @@ var vetrinodx = T([1,2])([7,0.1])(vetrinodx)
 var vetrini = STRUCT([vetrinosx,vetrinodx])
 var vetrini = R([0,1])([PI/2])(vetrini)
 var vetrini = T([0,1,2])([7,0.1,7])(vetrini)
-var amradio1 = STRUCT([armadio1,vetrini])
+var armadio1 = STRUCT([armadio1,vetrini])
 
 
 // ornamenti
